@@ -100,22 +100,29 @@ def main():
         matching_wine = next((wine for wine in wine_options if wine['name'] == recommendation), None)
 
         st.write("---")
+        try:
+            st.write(f"""
+                    ### 🍷 **Recommended Wine**
+                    {recommendation}
 
-        st.write(f"""
-                ### 🍷 **Recommended Wine**
-                {recommendation}
+                    ---
+                    **Country**: {matching_wine['country']}
 
-                ---
-                **Country**: {matching_wine['country']}
+                    **Province**: {matching_wine['province']}
 
-                **Province**: {matching_wine['province']}
+                    **Variety**: {matching_wine['variety']}
 
-                **Variety**: {matching_wine['variety']}
+                    **Winery**: {matching_wine['winery']}
 
-                **Winery**: {matching_wine['winery']}
+                    **Explanation**: {explanation}
+                    """)
+        except:
+            st.write(f"""
+                    ### 🍷 **Recommended Wine**
+                    {recommendation}
 
-                **Explanation**: {explanation}
-                """)
+                    **Explanation**: {explanation}
+                    """)
 
 
 if __name__ == "__main__":
