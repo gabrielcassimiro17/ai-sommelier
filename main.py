@@ -23,7 +23,9 @@ def main():
     llm_choice = st.sidebar.selectbox('Select Your LLM', ['PaLM','GPT 3.5'])
 
     api_key_input = st.sidebar.text_input('API Key',type='password')
-    if api_key_input is not None:
+
+
+    if st.checkbox('Authenticate'):
         if llm_choice == 'PaLM':
             llm = GooglePalm(temperature=0.0, google_api_key=api_key_input)
             embeddings = GooglePalmEmbeddings(google_api_key=api_key_input)

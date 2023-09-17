@@ -2,3 +2,4 @@ langchain==0.0.277
 pinecone-client==2.2.2
 streamlit==1.26.0
 pandas
+google-generativeai
