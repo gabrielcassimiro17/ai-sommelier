@@ -25,7 +25,7 @@ def main():
     api_key_input = st.sidebar.text_input('API Key',type='password')
 
 
-    if st.checkbox('Authenticate'):
+    if st.sidebar.checkbox('Authenticate'):
         if llm_choice == 'PaLM':
             llm = GooglePalm(temperature=0.0, google_api_key=api_key_input)
             embeddings = GooglePalmEmbeddings(google_api_key=api_key_input)
