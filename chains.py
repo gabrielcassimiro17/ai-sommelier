@@ -104,8 +104,3 @@ def build_recommendation_chain(llm):
         verbose=False,
     )
     return chain, response_format, output_parser
-
-    ## ASK FOR USER INPUT ABOUT HIS TASTE. done
-    ## ASK FOR LLM TO GENERATE STRING TO USE FOR SIMILARITY SEARCH. done
-    ## GET TOP 3 WINES FROM DB
-    ## ASK FOR LLM TO SELECT ONE WINE TO RECOMMEND
